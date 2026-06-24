@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Patients</title>
+
+<link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="mobile-menu-btn" onclick="toggleSidebar()">
+☰
+</div>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+
+            <h2>MediCore</h2>
+
+            <span>Hospital ERP</span>
+
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">Dashboard</a>
+            </li>
+
+            <li class="active">
+                <a href="patient_list.html">Patients</a>
+            </li>
+
+            <li>
+                <a href="doctor_list.html">Doctors</a>
+            </li>
+
+            <li>
+                <a href="employee_list.html">Employees</a>
+            </li>
+
+            <li>
+                <a href="appointment_list.html">Appointments</a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>Patient Management</h1>
+
+                <p>
+                    Manage all hospital patients
+                </p>
+
+            </div>
+
+            <a href="patient_form.html" class="btn-primary">
+                + Add Patient
+            </a>
+
+        </div>
+
+        <!-- Search -->
+
+        <div class="table-toolbar">
+
+            <input
+            type="text"
+            placeholder="Search patient...">
+
+            <select>
+
+                <option>All Status</option>
+                <option>Admitted</option>
+                <option>Treatment</option>
+                <option>Discharged</option>
+
+            </select>
+
+        </div>
+
+        <!-- Table -->
+
+        <div class="table-card">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Patient</th>
+                        <th>ID</th>
+                        <th>Department</th>
+                        <th>Status</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+
+                            <div class="table-user">
+
+                                <div class="avatar">
+                                    AK
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Ahmed Khan
+                                    </strong>
+
+                                    <small>
+                                        ahmed@gmail.com
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>#PT001</td>
+
+                        <td>Cardiology</td>
+
+                        <td>
+
+                            <span class="badge success">
+                                Admitted
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <a href="patient_form.html" class="btn-edit">
+                                Edit
+                            </a>
+
+                            <button class="btn-delete">
+                                Delete
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+
+                            <div class="table-user">
+
+                                <div class="avatar">
+                                    SA
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Sarah Ahmed
+                                    </strong>
+
+                                    <small>
+                                        sarah@gmail.com
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>#PT002</td>
+
+                        <td>Neurology</td>
+
+                        <td>
+
+                            <span class="badge warning">
+                                Treatment
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <a href="patient_form.html" class="btn-edit">
+                                Edit
+                            </a>
+
+                            <button class="btn-delete">
+                                Delete
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+
+                            <div class="table-user">
+
+                                <div class="avatar">
+                                    RH
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Rakib Hasan
+                                    </strong>
+
+                                    <small>
+                                        rakib@gmail.com
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>#PT003</td>
+
+                        <td>Emergency</td>
+
+                        <td>
+
+                            <span class="badge danger">
+                                Critical
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <a href="patient_form.html" class="btn-edit">
+                                Edit
+                            </a>
+
+                            <button class="btn-delete">
+                                Delete
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+
+function toggleSidebar(){
+
+document
+.getElementById("sidebar")
+.classList.toggle("show");
+
+}
+
+</script>
+
+</body>
+</html>

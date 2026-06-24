@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body style="display:block; background-color: #f1f5f9;">
+    <div class="form-container">
+        <h2 style="margin-bottom: 1.5rem; text-align: center;">{{ title }}</h2>
+        
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}<li>{{ message }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label>{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+        </form>
+        
+        <div style="margin-top: 1.5rem; text-align: center; font-size: 0.875rem;">
+            {% if title == "Login" %}
+                Don't have an account? <a href="{% url 'hospitalapp:register' %}">">Register here</a>
+            {% else %}
+                Already have an account? <a href="{% url 'hospitalapp:login' %}">Login here</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="mobile-menu-btn" onclick="toggleSidebar()">
+☰
+</div>
+
+<div class="wrapper">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+
+            <h2>MediCore</h2>
+
+            <span>Hospital ERP</span>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="patient_list.html">
+                    Patients
+                </a>
+            </li>
+
+            <li>
+                <a href="doctor_list.html">
+                    Doctors
+                </a>
+            </li>
+
+            <li>
+                <a href="employee_list.html">
+                    Employees
+                </a>
+            </li>
+
+            <li>
+                <a href="appointment_list.html">
+                    Appointments
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Welcome Back Admin
+                </p>
+
+            </div>
+
+        </header>
+
+        <section class="stats-grid">
+
+            <div class="stat-card blue">
+
+                <h4>Total Patients</h4>
+
+                <h2>2458</h2>
+
+            </div>
+
+            <div class="stat-card green">
+
+                <h4>Total Doctors</h4>
+
+                <h2>124</h2>
+
+            </div>
+
+            <div class="stat-card purple">
+
+                <h4>Employees</h4>
+
+                <h2>356</h2>
+
+            </div>
+
+            <div class="stat-card orange">
+
+                <h4>Appointments</h4>
+
+                <h2>896</h2>
+
+            </div>
+
+        </section>
+
+        <section class="dashboard-grid">
+
+            <div class="card">
+
+                <h3>Recent Patients</h3>
+
+                <table>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+
+                    <tr>
+                        <td>Ahmed Khan</td>
+                        <td>Admitted</td>
+                    </tr>
+
+                    <tr>
+                        <td>Sarah Ahmed</td>
+                        <td>Treatment</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Quick Actions</h3>
+
+                <div class="quick-links">
+
+                    <a href="patient_form.html">
+                        Add Patient
+                    </a>
+
+                    <a href="doctor_form.html">
+                        Add Doctor
+                    </a>
+
+                    <a href="employee_form.html">
+                        Add Employee
+                    </a>
+
+                    <a href="appointment_form.html">
+                        Add Appointment
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+
+function toggleSidebar(){
+
+document
+.getElementById("sidebar")
+.classList.toggle("show");
+
+}
+
+</script>
+
+</body>
+
+</html>

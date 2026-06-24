@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div style="margin-bottom: 1.5rem; text-align: right;">
+    <a href="{% url 'hospitalapp:create_patient' %}"> class="btn btn-primary">+ Add New Patient</a>
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr><th>Username</th><th>Email</th><th style="text-align: right;">Actions</th></tr>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+            <tr>
+                <td>{{ patient.username }}</td>
+                <td>{{ patient.email }}</td>
+                <td style="text-align: right;">
+                    <a href="{% url 'edit_patient' patient.pk %}" class="btn btn-edit">Edit</a>
+                    <a href="{% url 'delete_patient' patient.pk %}" class="btn btn-danger" onclick="return confirm('Delete record permanently?')">Delete</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="3">No records found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

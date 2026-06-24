@@ -1,0 +1,136 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<h2 style="margin-bottom: 1rem;">Assigned Clinic Patients</h2>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr><th>Patient ID</th><th>Username</th><th>Email</th></tr>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+            <tr><td>{{ patient.id }}</td><td>{{ patient.username }}</td><td>{{ patient.email }}</td></tr>
+            {% empty %}
+            <tr><td colspan="3">No active patients registered.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Hospital Management System{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🏥
+            </div>
+
+            <div>
+                <h2>MediCare</h2>
+                <span>Hospital ERP</span>
+            </div>
+
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="#">
+                    <span>📊</span>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span>🧑‍⚕️</span>
+                    Doctors
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span>🩺</span>
+                    Patients
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span>👨‍💼</span>
+                    Employees
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span>📅</span>
+                    Appointments
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Hospital Management System</h1>
+
+                <p>
+                    Welcome Back,
+                    {{ request.user.username }}
+                </p>
+
+            </div>
+
+            <div class="profile-box">
+
+                <div class="profile-circle">
+                    {{ request.user.username|slice:":1"|upper }}
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="page-content">
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
+</div>
+{% endblock %}
