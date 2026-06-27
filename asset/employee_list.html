@@ -1,28 +1,311 @@
-{% extends 'base/base.html' %}
-{% block content %}
-<div style="margin-bottom: 1.5rem; text-align: right;">
-    <a href="{% url 'create_patient' %}" class="btn btn-primary">+ Add New Patient</a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="table-container">
-    <table>
-        <thead>
-            <tr><th>Username</th><th>Email</th><th style="text-align: right;">Actions</th></tr>
-        </thead>
-        <tbody>
-            {% for patient in patients %}
-            <tr>
-                <td>{{ patient.username }}</td>
-                <td>{{ patient.email }}</td>
-                <td style="text-align: right;">
-                    <a href="{% url 'edit_patient' patient.pk %}" class="btn btn-edit">Edit</a>
-                    <a href="{% url 'delete_patient' patient.pk %}" class="btn btn-danger" onclick="return confirm('Delete record permanently?')">Delete</a>
-                </td>
-            </tr>
-            {% empty %}
-            <tr><td colspan="3">No records found.</td></tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-{% endblock %}
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employees</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+
+    <div class="mobile-menu-btn" onclick="toggleSidebar()">☰</div>
+
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo">
+
+                <h2>MediCore</h2>
+
+                <span>Hospital ERP</span>
+
+            </div>
+
+            <ul>
+
+                <li><a href="dashboard.html">Dashboard</a></li>
+
+                <li><a href="patient_list.html">Patients</a></li>
+
+                <li><a href="doctor_list.html">Doctors</a></li>
+
+                <li class="active"><a href="employee_list.html">Employees</a></li>
+
+                <li><a href="appointment_list.html">Appointments</a></li>
+
+            </ul>
+
+        </aside>
+
+        <!-- Main -->
+
+        <main class="main">
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>Employee Management</h1>
+
+                    <p>Manage hospital employees and staff</p>
+
+                </div>
+
+                <a href="employee_form.html" class="btn-primary">
+
+                    + Add Employee
+
+                </a>
+
+            </div>
+
+            <div class="table-toolbar">
+
+                <input type="text" placeholder="Search Employee...">
+
+                <select>
+
+                    <option>All Departments</option>
+
+                    <option>Reception</option>
+
+                    <option>Pharmacy</option>
+
+                    <option>Accounts</option>
+
+                    <option>Laboratory</option>
+
+                    <option>Security</option>
+
+                </select>
+
+            </div>
+
+            <div class="table-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Employee</th>
+
+                            <th>ID</th>
+
+                            <th>Phone</th>
+
+                            <th>Department</th>
+
+                            <th>Position</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+
+                                <div class="table-user">
+
+                                    <div class="avatar">RA</div>
+
+                                    <div>
+
+                                        <strong>Rahim Ahmed</strong>
+
+                                        <small>rahim@gmail.com</small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>EMP001</td>
+
+                            <td>+8801711122233</td>
+
+                            <td>Reception</td>
+
+                            <td>Receptionist</td>
+
+                            <td>
+
+                                <span class="badge success">
+
+                                    Active
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="employee_form.html" class="btn-edit">
+
+                                    Edit
+
+                                </a>
+
+                                <button class="btn-delete">
+
+                                    Delete
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+
+                                <div class="table-user">
+
+                                    <div class="avatar">SK</div>
+
+                                    <div>
+
+                                        <strong>Shila Khan</strong>
+
+                                        <small>shila@gmail.com</small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>EMP002</td>
+
+                            <td>+8801812345678</td>
+
+                            <td>Laboratory</td>
+
+                            <td>Lab Technician</td>
+
+                            <td>
+
+                                <span class="badge warning">
+
+                                    On Leave
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="employee_form.html" class="btn-edit">
+
+                                    Edit
+
+                                </a>
+
+                                <button class="btn-delete">
+
+                                    Delete
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+
+                                <div class="table-user">
+
+                                    <div class="avatar">HK</div>
+
+                                    <div>
+
+                                        <strong>Hasan Karim</strong>
+
+                                        <small>hasan@gmail.com</small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>EMP003</td>
+
+                            <td>+8801912345678</td>
+
+                            <td>Accounts</td>
+
+                            <td>Accountant</td>
+
+                            <td>
+
+                                <span class="badge success">
+
+                                    Active
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="employee_form.html" class="btn-edit">
+
+                                    Edit
+
+                                </a>
+
+                                <button class="btn-delete">
+
+                                    Delete
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script>
+
+        function toggleSidebar() {
+
+            document.getElementById("sidebar").classList.toggle("show");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,28 +1,220 @@
-{% extends 'base/base.html' %}
-{% block content %}
-<div style="margin-bottom: 1.5rem; text-align: right;">
-    <a href="{% url 'create_patient' %}" class="btn btn-primary">+ Add New Patient</a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="table-container">
-    <table>
-        <thead>
-            <tr><th>Username</th><th>Email</th><th style="text-align: right;">Actions</th></tr>
-        </thead>
-        <tbody>
-            {% for patient in patients %}
-            <tr>
-                <td>{{ patient.username }}</td>
-                <td>{{ patient.email }}</td>
-                <td style="text-align: right;">
-                    <a href="{% url 'edit_patient' patient.pk %}" class="btn btn-edit">Edit</a>
-                    <a href="{% url 'delete_patient' patient.pk %}" class="btn btn-danger" onclick="return confirm('Delete record permanently?')">Delete</a>
-                </td>
-            </tr>
-            {% empty %}
-            <tr><td colspan="3">No records found.</td></tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+
+    <div class="mobile-menu-btn" onclick="toggleSidebar()">☰</div>
+
+    <div class="wrapper">
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo">
+                <h2>MediCore</h2>
+                <span>Hospital ERP</span>
+            </div>
+
+            <ul>
+
+                <li><a href="dashboard.html">Dashboard</a></li>
+
+                <li><a href="patient_list.html">Patients</a></li>
+
+                <li class="active">
+                    <a href="doctor_list.html">Doctors</a>
+                </li>
+
+                <li><a href="employee_list.html">Employees</a></li>
+
+                <li><a href="appointment_list.html">Appointments</a></li>
+
+            </ul>
+
+        </aside>
+
+        <main class="main">
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>Doctor Management</h1>
+
+                    <p>Manage all hospital doctors</p>
+
+                </div>
+
+                <a href="doctor_form.html" class="btn-primary">
+                    + Add Doctor
+                </a>
+
+            </div>
+
+            <div class="doctor-grid">
+
+                <div class="doctor-card">
+
+                    <div class="doctor-header">
+
+                        <div class="doctor-image">
+                            AK
+                        </div>
+
+                        <span class="available">
+                            Available
+                        </span>
+
+                    </div>
+
+                    <h3>Dr. Ahmed Khan</h3>
+
+                    <p class="speciality">
+                        Cardiologist
+                    </p>
+
+                    <div class="doctor-details">
+
+                        <p><strong>Phone</strong><br>+8801712345678</p>
+
+                        <p><strong>Experience</strong><br>12 Years</p>
+
+                        <p><strong>Room</strong><br>305</p>
+
+                        <p><strong>Fee</strong><br>৳1000</p>
+
+                    </div>
+
+                    <div class="doctor-action">
+
+                        <a href="doctor_form.html" class="btn-edit">
+                            Edit
+                        </a>
+
+                        <button class="btn-delete">
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="doctor-card">
+
+                    <div class="doctor-header">
+
+                        <div class="doctor-image">
+                            SA
+                        </div>
+
+                        <span class="busy">
+                            Busy
+                        </span>
+
+                    </div>
+
+                    <h3>Dr. Sarah Ahmed</h3>
+
+                    <p class="speciality">
+                        Neurologist
+                    </p>
+
+                    <div class="doctor-details">
+
+                        <p><strong>Phone</strong><br>+8801812345678</p>
+
+                        <p><strong>Experience</strong><br>8 Years</p>
+
+                        <p><strong>Room</strong><br>208</p>
+
+                        <p><strong>Fee</strong><br>৳800</p>
+
+                    </div>
+
+                    <div class="doctor-action">
+
+                        <a href="doctor_form.html" class="btn-edit">
+                            Edit
+                        </a>
+
+                        <button class="btn-delete">
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="doctor-card">
+
+                    <div class="doctor-header">
+
+                        <div class="doctor-image">
+                            RH
+                        </div>
+
+                        <span class="available">
+                            Available
+                        </span>
+
+                    </div>
+
+                    <h3>Dr. Rakib Hasan</h3>
+
+                    <p class="speciality">
+                        Orthopedic
+                    </p>
+
+                    <div class="doctor-details">
+
+                        <p><strong>Phone</strong><br>+8801912345678</p>
+
+                        <p><strong>Experience</strong><br>15 Years</p>
+
+                        <p><strong>Room</strong><br>402</p>
+
+                        <p><strong>Fee</strong><br>৳1200</p>
+
+                    </div>
+
+                    <div class="doctor-action">
+
+                        <a href="doctor_form.html" class="btn-edit">
+                            Edit
+                        </a>
+
+                        <button class="btn-delete">
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script>
+
+        function toggleSidebar() {
+
+            document.getElementById("sidebar").classList.toggle("show");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
