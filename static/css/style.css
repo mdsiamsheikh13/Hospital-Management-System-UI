@@ -1168,4 +1168,84 @@ text-align:center;
 }
 
 
+/* ==========================
+   PROFILE PAGE
+========================== */
 
+.profile-grid{
+
+display:grid;
+
+grid-template-columns:320px 1fr;
+
+gap:25px;
+
+}
+
+.profile-card{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:35px;
+
+text-align:center;
+
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+height:max-content;
+
+}
+
+.profile-image{
+
+width:140px;
+
+height:140px;
+
+margin:auto;
+
+margin-bottom:20px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:50px;
+
+font-weight:700;
+
+color:#fff;
+
+}
+
+.profile-card h2{
+
+margin-bottom:8px;
+
+}
+
+.profile-card p{
+
+color:#64748b;
+
+margin-bottom:20px;
+
+}
+
+@media(max-width:900px){
+
+.profile-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
