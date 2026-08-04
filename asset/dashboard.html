@@ -3,271 +3,327 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dashboard</title>
+    <title>Dashboard</title>
 
-<link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 
 </head>
 
 <body>
 
 
-    
-    
+
+
     <div class="mobile-menu-btn" onclick="toggleSidebar()">
         ☰
     </div>
-    
+
     <div class="wrapper">
 
 
-    <aside class="sidebar" id="sidebar">
-    
-        <div class="logo">
-    
-            <div class="logo-icon">
-    
-                🏥
-    
-            </div>
-    
-            <div>
-    
-                <h2>MediCore</h2>
-    
-                <span>Hospital ERP</span>
-    
-            </div>
-    
-        </div>
-    
-        <ul class="sidebar-menu">
-    
-            <li class="active">
-    
-                <a href="dashboard.html">
-    
-                    <span class="menu-icon">🏠</span>
-    
-                    <span>Dashboard</span>
-    
-                </a>
-    
-            </li>
-    
-            <li>
-    
-                <a href="patient_list.html">
-    
-                    <span class="menu-icon">🧑‍🤝‍🧑</span>
-    
-                    <span>Patients</span>
-    
-                </a>
-    
-            </li>
-    
-            <li>
-    
-                <a href="doctor_list.html">
-    
-                    <span class="menu-icon">👨‍⚕️</span>
-    
-                    <span>Doctors</span>
-    
-                </a>
-    
-            </li>
-    
-            <li>
-    
-                <a href="employee_list.html">
-    
-                    <span class="menu-icon">👥</span>
-    
-                    <span>Employees</span>
-    
-                </a>
-    
-            </li>
-    
-            <li>
-    
-                <a href="appointment_list.html">
-    
-                    <span class="menu-icon">📅</span>
-    
-                    <span>Appointments</span>
-    
-                </a>
-    
-            </li>
-    
-            <li>
-    
-                <a href="profile.html">
-    
-                    <span class="menu-icon">🙍</span>
-    
-                    <span>Profile</span>
-    
-                </a>
-    
-            </li>
-    
-            <li>
-    
-                <a href="settings.html">
-    
-                    <span class="menu-icon">⚙️</span>
-    
-                    <span>Settings</span>
-    
-                </a>
-    
-            </li>
-    
-            <li>
-    
-                <a href="login.html">
-    
-                    <span class="menu-icon">🚪</span>
-    
-                    <span>Logout</span>
-    
-                </a>
-    
-            </li>
-    
-        </ul>
-    
-    </aside>
+        <aside class="sidebar" id="sidebar">
 
-    <main class="main">
+            <div class="logo">
 
-        <header class="topbar">
+                <div class="logo-icon">
 
-            <div>
+                    🏥
 
-                <h1>Dashboard</h1>
+                </div>
 
-                <p>
-                    Welcome Back Admin
-                </p>
+                <div>
 
-            </div>
+                    <h2>MediCore</h2>
 
-        </header>
-
-        <section class="stats-grid">
-
-            <div class="stat-card blue">
-
-                <h4>Total Patients</h4>
-
-                <h2>2458</h2>
-
-            </div>
-
-            <div class="stat-card green">
-
-                <h4>Total Doctors</h4>
-
-                <h2>124</h2>
-
-            </div>
-
-            <div class="stat-card purple">
-
-                <h4>Employees</h4>
-
-                <h2>356</h2>
-
-            </div>
-
-            <div class="stat-card orange">
-
-                <h4>Appointments</h4>
-
-                <h2>896</h2>
-
-            </div>
-
-        </section>
-
-        <section class="dashboard-grid">
-
-            <div class="card">
-
-                <h3>Recent Patients</h3>
-
-                <table>
-
-                    <tr>
-                        <th>Name</th>
-                        <th>Status</th>
-                    </tr>
-
-                    <tr>
-                        <td>Ahmed Khan</td>
-                        <td>Admitted</td>
-                    </tr>
-
-                    <tr>
-                        <td>Sarah Ahmed</td>
-                        <td>Treatment</td>
-                    </tr>
-
-                </table>
-
-            </div>
-
-            <div class="card">
-
-                <h3>Quick Actions</h3>
-
-                <div class="quick-links">
-
-                    <a href="patient_form.html">
-                        Add Patient
-                    </a>
-
-                    <a href="doctor_form.html">
-                        Add Doctor
-                    </a>
-
-                    <a href="employee_form.html">
-                        Add Employee
-                    </a>
-
-                    <a href="appointment_form.html">
-                        Add Appointment
-                    </a>
+                    <span>Hospital ERP</span>
 
                 </div>
 
             </div>
 
-        </section>
+            <ul class="sidebar-menu">
 
-    </main>
+                <li class="active">
 
-</div>
-<script>
+                    <a href="dashboard.html">
 
-function toggleSidebar(){
+                        <span class="menu-icon">🏠</span>
 
-document
-.getElementById("sidebar")
-.classList.toggle("show");
+                        <span>Dashboard</span>
 
-}
+                    </a>
 
-</script>
+                </li>
+
+                <li>
+
+                    <a href="patient_list.html">
+
+                        <span class="menu-icon">🧑‍🤝‍🧑</span>
+
+                        <span>Patients</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="doctor_list.html">
+
+                        <span class="menu-icon">👨‍⚕️</span>
+
+                        <span>Doctors</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="employee_list.html">
+
+                        <span class="menu-icon">👥</span>
+
+                        <span>Employees</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="appointment_list.html">
+
+                        <span class="menu-icon">📅</span>
+
+                        <span>Appointments</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="profile.html">
+
+                        <span class="menu-icon">🙍</span>
+
+                        <span>Profile</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="settings.html">
+
+                        <span class="menu-icon">⚙️</span>
+
+                        <span>Settings</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="login.html">
+
+                        <span class="menu-icon">🚪</span>
+
+                        <span>Logout</span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <main class="main">
+
+            <!-- ==========================
+                 TOPBAR
+            ========================== -->
+            
+            <header class="topbar">
+            
+                <div class="topbar-left">
+            
+                    <h1>
+            
+                        Dashboard
+            
+                    </h1>
+            
+                    <p>
+            
+                        Welcome back, Administrator 👋
+            
+                    </p>
+            
+                </div>
+            
+                <div class="topbar-right">
+            
+                    <div class="search-box">
+            
+                        <input type="text" placeholder="Search patients, doctors...">
+            
+                    </div>
+            
+                    <div class="notification">
+            
+                        🔔
+            
+                        <span>3</span>
+            
+                    </div>
+            
+                    <div class="user-profile">
+            
+                        <div class="user-avatar">
+            
+                            A
+            
+                        </div>
+            
+                        <div class="user-info">
+            
+                            <h4>
+            
+                                Admin User
+            
+                            </h4>
+            
+                            <small>
+            
+                                Administrator
+            
+                            </small>
+            
+                        </div>
+            
+                    </div>
+            
+                </div>
+            
+            </header>
+
+            <section class="stats-grid">
+
+                <div class="stat-card blue">
+
+                    <h4>Total Patients</h4>
+
+                    <h2>2458</h2>
+
+                </div>
+
+                <div class="stat-card green">
+
+                    <h4>Total Doctors</h4>
+
+                    <h2>124</h2>
+
+                </div>
+
+                <div class="stat-card purple">
+
+                    <h4>Employees</h4>
+
+                    <h2>356</h2>
+
+                </div>
+
+                <div class="stat-card orange">
+
+                    <h4>Appointments</h4>
+
+                    <h2>896</h2>
+
+                </div>
+
+            </section>
+
+            <section class="dashboard-grid">
+
+                <div class="card">
+
+                    <h3>Recent Patients</h3>
+
+                    <table>
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                        </tr>
+
+                        <tr>
+                            <td>Ahmed Khan</td>
+                            <td>Admitted</td>
+                        </tr>
+
+                        <tr>
+                            <td>Sarah Ahmed</td>
+                            <td>Treatment</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Quick Actions</h3>
+
+                    <div class="quick-links">
+
+                        <a href="patient_form.html">
+                            Add Patient
+                        </a>
+
+                        <a href="doctor_form.html">
+                            Add Doctor
+                        </a>
+
+                        <a href="employee_form.html">
+                            Add Employee
+                        </a>
+
+                        <a href="appointment_form.html">
+                            Add Appointment
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+    <script>
+
+        function toggleSidebar() {
+
+            document
+                .getElementById("sidebar")
+                .classList.toggle("show");
+
+        }
+
+    </script>
 
 </body>
 
 </html>
+
+header
